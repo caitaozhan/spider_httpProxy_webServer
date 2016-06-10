@@ -24,6 +24,7 @@ def download(url, filename):
 
 
 def save_pic(url, path):
+	print(url)
 	searchname = ".*/(.*?.jpg)"
 	name = re.findall(searchname, url)
 	filename = path + '/' + name[0]
@@ -41,7 +42,7 @@ def save_pic(url, path):
 
 def pic_list(picList, path):
 	picurl = ""
-	for piculr in picList:
+	for picurl in picList:
 		save_pic(picurl, path)
 
 
