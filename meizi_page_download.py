@@ -24,7 +24,6 @@ def download(url, filename):
 
 
 def save_pic(url, path):
-	print(url)
 	searchname = ".*/(.*?.jpg)"
 	name = re.findall(searchname, url)
 	filename = path + '/' + name[0]
