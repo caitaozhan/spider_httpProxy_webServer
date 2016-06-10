@@ -57,18 +57,26 @@ def picurl(url, path):
 			print("load" + url + "error")
 			continue
 		else:
+			print("START OF HTML\n***\n" + html + "END OF HTML\n***\n")
 			break
 	rePicContent1 = '<div.*?id="picture.*?>.*?<p>(.*?)</p>'
 	rePicContent2 = '<div.*?class="postContent.*?>.*?<p>(.*?)</p>'
 	rePicList = '<img.*?src="(.*?)".*?>'
 	picContent = re.findall(rePicContent1, html, re.S)
 	if len(picContent) <= 0:
+		print("FIRST IF")
 		picContent = re.findall(rePicContent2, html, re.S)
 	if len(picContent) <= 0:
 		print("load false, over download this page and return")
 		return False
 	else:
+		print("START OF PICCONTENT\n***\n")
+		print(picContent)
+		print("END OF PICCONTENT\n***\n")
 		picList = re.findall(rePicList, picContent[0], re.S)
+		print("START OF PICLIST\n***\n")
+		print(picList)
+		print("END OF PICLIST\n***\n")
 		pic_list(picList, path)
 
 
