@@ -11,6 +11,12 @@ def loadurl(url):
 	except urllib2.URLError:
 		return ""
 
+def printList(list):
+	print("[")
+	for i in list:
+		print(i)
+	print("]\n")
+
 
 def nextpage(url, path):
 	reNextLink = "<a.*?href='(.*?)'>.*?</a>"
@@ -22,7 +28,6 @@ def nextpage(url, path):
 	urlTail = re.findall(searchurltail, url, re.S)
 	urlhead = re.findall(searchhead, url, re.S)
 	path = path + '/' + pathTail[0]
-	print(path)
 	nextpageurl = []
 	html = ""
 	while True:
@@ -42,7 +47,7 @@ def nextpage(url, path):
 		print(i)
 		meizi_series_getpage.tag_series(i, path)
 
+
 if __name__ == "__main__":
-	print("caitao")
 	nextpage("http://www.meizitu.com/a/sifang.html", "/home/shiyanlou/Desktop/demo454")
 

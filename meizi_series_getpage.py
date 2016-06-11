@@ -24,6 +24,13 @@ def oneOfSeries(urllist, path):
 			pass
 
 
+def printList(list):
+	print("[")
+	for i in list:
+		print(i)
+	print("]\n")
+
+
 def tag_series(url, path):
 	reSeriesList = '<div.*?class="pic".*?>.*?<a.*?href="(.*?)".*?target.*?>'
 	html = ""
