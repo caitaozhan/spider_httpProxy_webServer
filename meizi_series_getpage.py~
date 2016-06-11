@@ -25,3 +25,17 @@ def oneOfSeries(urllist, path):
 
 def tag_series(url, path):
 	reSeriesList = '<div.*?class="pic".*?>.*?<a.*?href="(.*?)".*?target.*?>'
+	html = ""
+	while True:
+		html = loadurl(url)
+		if html == "":
+			print("load" + url + "error")
+			continue
+		else:
+			break
+	seriesList = re.findall(reSeriesList, html, re.S)
+	if len(seriesList) == 0:
+		pass
+	else:	
+		oneOfSeries(seriesList, path)
+

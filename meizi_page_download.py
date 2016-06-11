@@ -9,6 +9,9 @@ def loadurl(url):
 		return html
 	except urllib2.URLError:
 		return ""
+	except Exception:
+		print("unkown exception in conn.read()")
+		return ""
 
 
 def download(url, filename):
@@ -19,7 +22,7 @@ def download(url, filename):
 		f.close()
 		return True
 	except urllib2.URLError:
-		print("load" + url + "error")
+		print("load " + url + " error")
 		return False
 
 
@@ -28,7 +31,9 @@ def save_pic(url, path):
 	name = re.findall(searchname, url)
 	filename = path + '/' + name[0]
 	print(filename + ": start")
-	while True:
+	tryTimes = 3
+	while tryTimes != 0:
+		tryTimes -= 1
 		if os.path.exists(filename):
 			print(filename + " exists, skip")
 			return True
@@ -36,7 +41,10 @@ def save_pic(url, path):
 			os.mknod(filename)
 		if download(url, filename):
 			break
-	print(filename + ": over")
+	if tryTimes != 0:
+		print(filename + ": over")
+	else:
+		print(url + " failed to download!")
 
 
 def pic_list(picList, path):

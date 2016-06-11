@@ -11,6 +11,7 @@ def loadurl(url):
 	except urllib2.URLError:
 		return ""
 
+
 def oneOfSeries(urllist, path):
 	searchname = ".*/(.*?).html"
 	current_path = ""

@@ -22,7 +22,7 @@ def nextpage(url, path):
 	urlTail = re.findall(searchurltail, url, re.S)
 	urlhead = re.findall(searchhead, url, re.S)
 	path = path + '/' + pathTail[0]
-	print path
+	print(path)
 	nextpageurl = []
 	html = ""
 	while True:
@@ -43,5 +43,6 @@ def nextpage(url, path):
 		meizi_series_getpage.tag_series(i, path)
 
 if __name__ == "__main__":
-	nextpage("http://www.meizitu.com/a/sifang.html", "/home/shiyanlou/Desktop/demo454-2")
+	print("caitao")
+	nextpage("http://www.meizitu.com/a/sifang.html", "/home/shiyanlou/Desktop/demo454")
 
