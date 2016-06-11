@@ -42,3 +42,6 @@ def nextpage(url, path):
 		print(i)
 		meizi_series_getpage.tag_series(i, path)
 
+if __name__ == "__main__":
+	nextpage("http://www.meizitu.com/a/sifang.html", "/home/shiyanlou/Desktop/demo454-2")
+
