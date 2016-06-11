@@ -24,6 +24,9 @@ def download(url, filename):
 	except urllib2.URLError:
 		print("load " + url + " error")
 		return False
+	except Exception:
+		print("unkown exception in conn.read()")
+		return False
 
 
 def save_pic(url, path):
