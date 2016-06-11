@@ -68,9 +68,7 @@ def picurl(url, path):
 		print("load false, over download this page and return")
 		return False
 	else:
-		print(picContent)
 		picList = re.findall(rePicList, picContent[0], re.S)
-		print(picList)
 		pic_list(picList, path)
 
 
