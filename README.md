@@ -8,3 +8,5 @@ go to command line mode, type "python meizi_thread.py". I assume you have alread
 
 For linux/Mac:
 type "./meizi_thread.py" or "python meizi_thread.py"
+
+Note that in meizi_thread.meizi(url, path): you have to pass a local filename to paramater "path"

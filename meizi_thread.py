@@ -42,7 +42,6 @@ def meizi(url, path):
 		t.join()
 
 
-print("hehe")
 if __name__ == "__main__":
 	print("Spider start!")
 	meizi("http://www.meizitu.com", "/home/shiyanlou/Desktop/meizi")
