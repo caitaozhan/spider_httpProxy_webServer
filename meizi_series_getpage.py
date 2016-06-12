@@ -10,7 +10,9 @@ def loadurl(url):
 		return html
 	except urllib2.URLError:
 		return ""
-
+	except Exception:
+		print("unkown exception in conn.read()")
+		return ""
 
 def oneOfSeries(urllist, path):
 	searchname = ".*/(.*?).html"
