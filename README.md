@@ -7,4 +7,4 @@ The first project is a spider program that can automatically download pictures f
 
 The second project is a very simple http proxy server that only implements the very basic stuffs
 
-The third project is a very simple web server that only implements the basic stuffs
+The third project is a very simple web server that only implements the very basic stuffs
